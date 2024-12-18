@@ -1,4 +1,4 @@
-package br.com.jpburgarelli.vacancy_management.modules.company.entities.useCases;
+package br.com.jpburgarelli.vacancy_management.modules.company.useCases;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
