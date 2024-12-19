@@ -1,4 +1,4 @@
-package br.com.jpburgarelli.vacancy_management.modules.company.repositories;
+package br.com.jpburgarelli.vacancy_management.modules.company.repository;
 
 import java.util.Optional;
 import java.util.UUID;

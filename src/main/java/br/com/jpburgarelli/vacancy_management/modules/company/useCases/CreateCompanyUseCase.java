@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.jpburgarelli.vacancy_management.exception.ExceptionUserAlreadyFound;
 import br.com.jpburgarelli.vacancy_management.modules.company.entities.CompanyEntity;
-import br.com.jpburgarelli.vacancy_management.modules.company.repositories.CompanyRepository;
+import br.com.jpburgarelli.vacancy_management.modules.company.repository.CompanyRepository;
 
 @Service
 public class CreateCompanyUseCase {
