@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.jpburgarelli.vacancy_management.exception.ExceptionUserAlreadyFound;
-import br.com.jpburgarelli.vacancy_management.modules.candidate.CandidateEntity;
-import br.com.jpburgarelli.vacancy_management.modules.candidate.CandidateRepository;
+import br.com.jpburgarelli.vacancy_management.modules.candidate.entities.CandidateEntity;
+import br.com.jpburgarelli.vacancy_management.modules.candidate.repository.CandidateRepository;
 import br.com.jpburgarelli.vacancy_management.modules.candidate.useCases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 
@@ -20,7 +20,6 @@ public class CandidateController {
   @Autowired
   private CreateCandidateUseCase createCandidateUseCase;
  
-
   @PostMapping("/")
   public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity){
     try {
@@ -30,9 +29,5 @@ public class CandidateController {
       return ResponseEntity.badRequest().body(e.getMessage()); 
 
     }
-    
-
-  }
-
-  
+  } 
 }
