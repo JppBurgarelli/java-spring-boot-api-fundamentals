@@ -1,6 +1,7 @@
 package br.com.jpburgarelli.vacancy_management.modules.candidate.useCases;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.jpburgarelli.vacancy_management.exception.ExceptionUserAlreadyFound;
@@ -14,12 +15,19 @@ public class CreateCandidateUseCase {
   @Autowired
   private CandidateRepository candidateRepository;
 
+  @Autowired
+  private PasswordEncoder passwordEncoder;
+
   public CandidateEntity execute(CandidateEntity candidateEntity){
-    this.candidateRepository.
-      findByUsernameOrEmail(candidateEntity.getUsername(), candidateEntity.getEmail())
+    this.candidateRepository
+    .findByUsernameOrEmail(candidateEntity.getUsername(), candidateEntity.getEmail())
       .ifPresent((user) -> {
         throw new ExceptionUserAlreadyFound();
       });
+
+      var passwordHashed = this.passwordEncoder.encode(candidateEntity.getPassword());
+      candidateEntity.setPassword(passwordHashed);
+
     return this.candidateRepository.save(candidateEntity);
   }  
 }

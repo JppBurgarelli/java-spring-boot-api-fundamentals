@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.jpburgarelli.vacancy_management.exception.ExceptionUserAlreadyFound;
 import br.com.jpburgarelli.vacancy_management.modules.candidate.entities.CandidateEntity;
-import br.com.jpburgarelli.vacancy_management.modules.candidate.repository.CandidateRepository;
 import br.com.jpburgarelli.vacancy_management.modules.candidate.useCases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 
