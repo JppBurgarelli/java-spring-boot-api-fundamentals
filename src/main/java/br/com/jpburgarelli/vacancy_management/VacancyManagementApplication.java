@@ -9,5 +9,4 @@ public class VacancyManagementApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VacancyManagementApplication.class, args);
 	}
-
 }
